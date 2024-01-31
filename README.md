@@ -15,15 +15,19 @@ This Telegram bot offers a convenient way for users to obtain information and cl
 Before running the bot, you need to set up the necessary configuration:
 
 ### Credentials
-Create a config.json file with the following structure, filling in your respective API keys and project information:
+Create a `settings.py` file withing a folder `config` with the following structure, filling in your respective API keys and project information:
 
-```json
-{
-    "telegram_bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
-    "groundx_api_key": "YOUR_GROUNDX_API_KEY",
-    "openai_api_key": "YOUR_OPENAI_API_KEY",
-    "project_id": "YOUR_PROJECT_ID"
-}
+```python
+# Fetch the Telegram bot token from an environment variable
+TELEGRAM_API_TOKEN = 'YOUR_TELEGRAM_API_KEY'
+
+# GroundX Keys
+GROUNDX_API_KEY = 'YOUR_GROUNDX_API_KEY'
+GROUNDX_PROJECT_ID = 'YOUR_GROUNDX_PROJECT_ID'
+GROUNDX_BUCKET_ID = 'YOUR_GROUNDX_PROJECT_ID'
+
+# List of authorized Telegrams IDS to run this
+AUTHORIZED_IDS = ['TELEGRAM_CHAT_ID_1', 'TELEGRAM_CHAT_ID_2']
 ```
 
 Ensure this file is stored securely and is not exposed publicly, as it contains sensitive information.
