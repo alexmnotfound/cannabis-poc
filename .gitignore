@@ -1,5 +1,5 @@
 # User folders
-/config/settings.py
+./credentials.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,10 +1,7 @@
 import sys
-import logging
 sys.path.append("..")  # Add the parent directory to sys.path
-from config.settings import TELEGRAM_API_TOKEN
+import logging, json
 from bot.my_main_bot import MyMainBot
-
-# Configure path
 
 # Configure logging
 logging.basicConfig(
@@ -16,8 +13,11 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    logger.info("Bot started")
-    bot = MyMainBot(TELEGRAM_API_TOKEN)
+    logger.info("Starting bot")
+    with open('../credentials.json') as config_file:
+        config = json.load(config_file)
+
+    bot = MyMainBot(config)
     bot.run()
 
 
